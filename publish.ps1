@@ -1,4 +1,4 @@
-﻿﻿# Публикация нового релиза программы в этот репозиторий.
+﻿# Публикация нового релиза программы в этот репозиторий.
 #
 #   powershell -ExecutionPolicy Bypass -File publish.ps1 -App karaoke -Version 1.1 -Zip "..\Karaoke\dist\Karaoke 1.1.zip"
 #   powershell -ExecutionPolicy Bypass -File publish.ps1 -List        # список опубликованных версий
@@ -37,7 +37,8 @@ Set-Location (Join-Path $PSScriptRoot '..')
 
 $meta = $Meta[$App]
 $tag = '{0}-v{1}' -f $App, $Version
-$assetName = '{0} {1}.zip' -f $meta.folder, $Version
+# GitHub не допускает пробелы в именах ассетов — всегда <slug>-v<версия>.zip
+$assetName = '{0}-{1}.zip' -f $App, $Version
 $encoded = [uri]::EscapeDataString($assetName)
 $downloadUrl = "https://github.com/$Repo/releases/download/$tag/$encoded"
 $sha = (Get-FileHash $Zip -Algorithm SHA256).Hash.ToLower()
@@ -77,8 +78,9 @@ if ($appProps) { $manifest.apps.($App) = $entry }
 else { $manifest.apps | Add-Member $App $entry }
 
 $json = $manifest | ConvertTo-Json -Depth 6
+# JSON по стандарту без BOM: PowerShell 5.1 не переваривает BOM в JSON
 $out = Join-Path $env:TEMP 'updates.json'
-[IO.File]::WriteAllText($out, $json, [Text.UTF8Encoding]::new($true))
+[IO.File]::WriteAllText($out, $json, [Text.UTF8Encoding]::new($false))
 Move-Item $out $manifestPath -Force
 
 # 3. коммит
