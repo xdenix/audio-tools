@@ -14,24 +14,27 @@
 
 ## Установка одной командой (PowerShell)
 
+> Файл хранится в UTF-8 **с BOM**, а PowerShell 5.1 не переваривает BOM в строке,
+> поэтому в командах есть `.TrimStart([char]65279)` — это всё.
+
 **Видеокараоке:**
 ```powershell
-& ([scriptblock]::Create((irm https://raw.githubusercontent.com/xdenix/audio-tools/main/install.ps1))) -App karaoke
+& ([scriptblock]::Create((irm https://raw.githubusercontent.com/xdenix/audio-tools/main/install.ps1).TrimStart([char]65279))) -App karaoke
 ```
 
 **Минусовка:**
 ```powershell
-& ([scriptblock]::Create((irm https://raw.githubusercontent.com/xdenix/audio-tools/main/install.ps1))) -App minusmaker
+& ([scriptblock]::Create((irm https://raw.githubusercontent.com/xdenix/audio-tools/main/install.ps1).TrimStart([char]65279))) -App minusmaker
 ```
 
 **RuTube Audio:**
 ```powershell
-& ([scriptblock]::Create((irm https://raw.githubusercontent.com/xdenix/audio-tools/main/install.ps1))) -App rutube-audio
+& ([scriptblock]::Create((irm https://raw.githubusercontent.com/xdenix/audio-tools/main/install.ps1).TrimStart([char]65279))) -App rutube-audio
 ```
 
 **Без параметров** — установщик покажет меню и спросит, что ставить:
 ```powershell
-irm https://raw.githubusercontent.com/xdenix/audio-tools/main/install.ps1 | iex
+& ([scriptblock]::Create((irm https://raw.githubusercontent.com/xdenix/audio-tools/main/install.ps1).TrimStart([char]65279)))
 ```
 
 ## Параметры
