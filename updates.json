@@ -1,0 +1,38 @@
+{
+    "schema":  1,
+    "apps":  {
+                 "karaoke":  {
+                                 "displayName":  "Видеокараоке",
+                                 "folder":  "Karaoke",
+                                 "exe":  "Karaoke.exe",
+                                 "version":  "1.0",
+                                 "tag":  "karaoke-v1.0",
+                                 "asset":  "karaoke-1.0.zip",
+                                 "url":  "https://github.com/xdenix/audio-tools/releases/download/karaoke-v1.0/karaoke-1.0.zip",
+                                 "sha256":  "80076e862e951412cc6ccc6d3db05f09db0164f8db814ef1861a7e708355e038",
+                                 "size":  273025171
+                             },
+                 "minusmaker":  {
+                                    "displayName":  "Минусовка",
+                                    "folder":  "MinusMaker",
+                                    "exe":  "MinusMaker.exe",
+                                    "version":  "1.0",
+                                    "tag":  "minusmaker-v1.0",
+                                    "asset":  "minusmaker-1.0.zip",
+                                    "url":  "https://github.com/xdenix/audio-tools/releases/download/minusmaker-v1.0/minusmaker-1.0.zip",
+                                    "sha256":  "29cbe36002d6075ecbbb0d5516eef7171f5bec92474ce9df293e3f19237ffa19",
+                                    "size":  211497371
+                                },
+                 "rutube-audio":  {
+                                      "displayName":  "RuTube Audio",
+                                      "folder":  "RuTube Audio",
+                                      "exe":  "RuTube Audio.exe",
+                                      "version":  "1.0",
+                                      "tag":  "rutube-audio-v1.0",
+                                      "asset":  "rutube-audio-1.0.zip",
+                                      "url":  "https://github.com/xdenix/audio-tools/releases/download/rutube-audio-v1.0/rutube-audio-1.0.zip",
+                                      "sha256":  "8f8440654e0624e14c45386299e8f2406066e96ffffc3daf71f041cc1546c1bb",
+                                      "size":  57044111
+                                  }
+             }
+}
