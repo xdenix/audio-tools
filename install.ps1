@@ -40,7 +40,10 @@ function Get-Manifest {
     foreach ($url in $ManifestUrls) {
         try {
             Write-Host "Загружаю список версий: $url"
-            return Invoke-RestMethod -Uri $url -UseBasicParsing
+            $raw = (Invoke-WebRequest -Uri $url -UseBasicParsing).Content
+            # запасной вариант: у JSON по стандарту не бывает BOM, но если он есть — срезаем
+            if ($raw.Length -gt 0 -and $raw[0] -eq [char]0xFEFF) { $raw = $raw.Substring(1) }
+            return ConvertFrom-Json $raw
         } catch { $last = $_ }
     }
     Fail "Не удалось скачать updates.json. Проверь интернет. ($($last.Exception.Message))"
