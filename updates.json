@@ -5,12 +5,12 @@
                                  "displayName":  "Видеокараоке",
                                  "folder":  "Karaoke",
                                  "exe":  "Karaoke.exe",
-                                 "version":  "1.0",
-                                 "tag":  "karaoke-v1.0",
-                                 "asset":  "karaoke-1.0.zip",
-                                 "url":  "https://github.com/xdenix/audio-tools/releases/download/karaoke-v1.0/karaoke-1.0.zip",
-                                 "sha256":  "80076e862e951412cc6ccc6d3db05f09db0164f8db814ef1861a7e708355e038",
-                                 "size":  273025171
+                                 "version":  "1.1",
+                                 "tag":  "karaoke-v1.1",
+                                 "asset":  "karaoke-1.1.zip",
+                                 "url":  "https://github.com/xdenix/audio-tools/releases/download/karaoke-v1.1/karaoke-1.1.zip",
+                                 "sha256":  "08d2c1674a35db13e71ff7deec1a5ed6ffb3a28e1b36a711f9fa282858f47391",
+                                 "size":  274150573
                              },
                  "minusmaker":  {
                                     "displayName":  "Минусовка",
